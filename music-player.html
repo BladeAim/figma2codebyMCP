@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+        <!-- 背景层 -->
+        <div class="background"></div>
+        <div class="blur-overlay"></div>
+        
+        <!-- 封面图片 -->
+        <div class="album-cover">
+            <img src="assets/background.jpg" alt="Album Cover">
+        </div>
+        
+        <!-- 歌曲信息 -->
+        <div class="song-info">
+            <h2 class="artist">Fadaei</h2>
+            <h1 class="song-title">Bilit</h1>
+        </div>
+        
+        <!-- 进度条 -->
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <div class="progress-dot"></div>
+            <span class="current-time">00:36</span>
+            <span class="total-time">05:39</span>
+        </div>
+        
+        <!-- 控制按钮 -->
+        <div class="controls">
+            <button class="prev-btn"></button>
+            <button class="play-btn"></button>
+            <button class="next-btn"></button>
+        </div>
+        
+        <!-- 其他功能按钮 -->
+        <div class="extra-controls">
+            <button class="like-btn"></button>
+            <button class="share-btn"></button>
+            <button class="menu-btn"></button>
+        </div>
+    </div>
+</body>
+</html>

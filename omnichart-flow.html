@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnichart Flow Diagram</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Comment Styles */
+        .comment {
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .comment-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .comment-title {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        .comment-content {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        /* Color Variants */
+        .comment-orange {
+            background-color: #FFF4E5;
+            border: 1px solid #FFD8B2;
+        }
+        
+        .comment-orange .comment-number {
+            background-color: #FF9500;
+            color: white;
+        }
+        
+        .comment-blue {
+            background-color: #E5F2FF;
+            border: 1px solid #B2D7FF;
+        }
+        
+        .comment-blue .comment-number {
+            background-color: #007AFF;
+            color: white;
+        }
+        
+        .comment-purple {
+            background-color: #F2E5FF;
+            border: 1px solid #D7B2FF;
+        }
+        
+        .comment-purple .comment-number {
+            background-color: #AF52DE;
+            color: white;
+        }
+        
+        .comment-green {
+            background-color: #E5FFF4;
+            border: 1px solid #B2FFD8;
+        }
+        
+        .comment-green .comment-number {
+            background-color: #34C759;
+            color: white;
+        }
+        
+        /* Small Comment Variants */
+        .comment-small {
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Block Styles */
+        .block {
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #E5E5EA;
+            background-color: white;
+            font-weight: 500;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        
+        /* Arrow Styles */
+        .arrow-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            position: relative;
+        }
+        
+        .arrow-line {
+            height: 1px;
+            background-color: #007AFF;
+            flex-grow: 1;
+        }
+        
+        .arrow-head {
+            width: 0;
+            height: 0;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 8px solid #007AFF;
+        }
+        
+        /* Tooltip Styles */
+        .tooltip {
+            position: relative;
+            border-radius: 8px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .tooltip-green {
+            background-color: #E5FFF4;
+            border: 1px solid #B2FFD8;
+        }
+        
+        .tooltip-blue {
+            background-color: #E5F2FF;
+            border: 1px solid #B2D7FF;
+        }
+        
+        .tooltip-pointer {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: inherit;
+            transform: rotate(45deg);
+            border-right: inherit;
+            border-bottom: inherit;
+        }
+        
+        .tooltip-pointer.bottom {
+            bottom: -6px;
+            left: 50%;
+            margin-left: -6px;
+        }
+        
+        .tooltip-pointer.right {
+            right: -6px;
+            top: 50%;
+            margin-top: -6px;
+        }
+        
+        .tooltip-content {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="flow-container">
+        <!-- Comments Section -->
+        <div class="comment comment-orange">
+            <div class="comment-header">
+                <div class="comment-number">1</div>
+                <div class="comment-title">Type your comments</div>
+            </div>
+            <div class="comment-content">
+                This is an orange comment box for general notes.
+            </div>
+        </div>
+        
+        <div class="comment comment-blue">
+            <div class="comment-header">
+                <div class="comment-number">1</div>
+                <div class="comment-title">Type your comments</div>
+            </div>
+            <div class="comment-content">
+                This is a blue comment box for technical notes.
+            </div>
+        </div>
+        
+        <div class="comment comment-purple">
+            <div class="comment-header">
+                <div class="comment-number">1</div>
+                <div class="comment-title">Type your comments</div>
+            </div>
+            <div class="comment-content">
+                This is a purple comment box for design notes.
+            </div>
+        </div>
+        
+        <div class="comment comment-green">
+            <div class="comment-header">
+                <div class="comment-number">1</div>
+                <div class="comment-title">Type your comments</div>
+            </div>
+            <div class="comment-content">
+                This is a green comment box for success states.
+            </div>
+        </div>
+        
+        <!-- Small Comments -->
+        <div class="comment comment-orange comment-small">Product Feature</div>
+        <div class="comment comment-blue comment-small">Product Feature</div>
+        <div class="comment comment-green comment-small">Product Feature</div>
+        
+        <!-- Blocks and Arrows -->
+        <div class="block">Block</div>
+        
+        <div class="arrow-container">
+            <div class="arrow-line"></div>
+            <div class="arrow-head"></div>
+        </div>
+        
+        <!-- Options -->
+        <div class="block" style="background-color: #FFF4E5; border-color: #FFD8B2;">Options</div>
+        
+        <!-- Tooltips -->
+        <div class="tooltip tooltip-green" style="margin-top: 40px;">
+            <div class="tooltip-pointer bottom"></div>
+            <div class="tooltip-content">
+                Style Guide<br>
+                - Color<br>
+                - Typography
+            </div>
+        </div>
+        
+        <div class="tooltip tooltip-blue" style="margin-top: 40px; margin-left: 40px;">
+            <div class="tooltip-pointer right"></div>
+            <div class="tooltip-content">
+                Style Guide<br>
+                - Color<br>
+                - Typography
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 这里可以添加流程图交互逻辑
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 18 Clock Widget (Neutral)</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        .widget-container {
+            width: 158px;
+            height: 158px;
+            position: relative;
+        }
+        
+        .widget-label {
+            position: absolute;
+            width: 158px;
+            height: 16px;
+            top: 163px;
+            font-family: 'SF Pro Text';
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.333em;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .widget-background {
+            width: 158px;
+            height: 158px;
+            border-radius: 22px;
+            background-color: #1C1C1D;
+            padding: 8px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .clock-frame {
+            width: 142px;
+            height: 142px;
+            border-radius: 100px;
+            background-color: white;
+            position: relative;
+        }
+        
+        .clock-ticks {
+            position: absolute;
+            width: 132.7px;
+            height: 133.2px;
+            top: 4.3px;
+            left: 4.65px;
+            background-color: #8C8C8C;
+        }
+        
+        .hand {
+            position: absolute;
+            transform-origin: bottom center;
+            box-shadow: 0 0.5px 1.5px 0 rgba(0, 0, 0, 0.19), 0 0 1px 0 rgba(0, 0, 0, 0.04);
+        }
+        
+        .hour-hand {
+            width: 44.02px;
+            height: 22.9px;
+            top: 53.2px;
+            left: 32.09px;
+            background-color: #1D1D20;
+        }
+        
+        .minute-hand {
+            width: 67.14px;
+            height: 35.94px;
+            top: 65.68px;
+            left: 9.13px;
+            background-color: #1D1D20;
+        }
+        
+        .second-hand {
+            width: 5.5px;
+            height: 79px;
+            top: 60px;
+            left: 68.25px;
+            background-color: white;
+        }
+        
+        .city-label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-family: 'SF Pro Text';
+            font-weight: 500;
+            font-size: 12px;
+            color: white;
+        }
+        
+        .time-diff {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: 'SF Pro Text';
+            font-weight: 500;
+            font-size: 12px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-background">
+            <div class="clock-frame">
+                <div class="clock-ticks"></div>
+                <div class="hand hour-hand"></div>
+                <div class="hand minute-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+            <div class="time-diff">+3</div>
+            <div class="city-label">NYC</div>
+        </div>
+        <div class="widget-label">Clock</div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours() % 12;
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            
+            const hourDeg = (hours * 30) + (minutes * 0.5);
+            const minuteDeg = minutes * 6;
+            const secondDeg = seconds * 6;
+            
+            document.querySelector('.hour-hand').style.transform = `rotate(${hourDeg}deg)`;
+            document.querySelector('.minute-hand').style.transform = `rotate(${minuteDeg}deg)`;
+            document.querySelector('.second-hand').style.transform = `rotate(${secondDeg}deg)`;
+        }
+        
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS 18 Battery Widget</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #1C1C1E;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .widget-container {
+            width: 380px;
+            background-color: #2C2C2E;
+            border-radius: 22px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .widget-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: #8E8E93;
+            margin-bottom: 15px;
+        }
+        
+        .device-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .device-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .device-icon {
+            width: 32px;
+            height: 32px;
+            opacity: 0.25;
+        }
+        
+        .device-info {
+            flex: 1;
+        }
+        
+        .device-name {
+            font-size: 14px;
+            color: #E5E5EA;
+            margin-bottom: 2px;
+        }
+        
+        .battery-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .battery-percentage {
+            font-size: 14px;
+            color: #E5E5EA;
+            min-width: 30px;
+        }
+        
+        .battery-indicator {
+            flex: 1;
+            height: 4px;
+            background-color: rgba(229, 229, 234, 0.4);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .battery-level {
+            height: 100%;
+            background-color: #30D158;
+        }
+        
+        .separator {
+            height: 1px;
+            background-color: rgba(229, 229, 234, 0.1);
+            margin: 12px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="widget-label">Batteries</div>
+        
+        <div class="device-container">
+            <!-- iPhone -->
+            <div class="device-item">
+                <div class="device-icon">📱</div>
+                <div class="device-info">
+                    <div class="device-name">Adi's iPhone 14 Pro</div>
+                    <div class="battery-info">
+                        <div class="battery-percentage">100%</div>
+                        <div class="battery-indicator">
+                            <div class="battery-level" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- Apple Watch -->
+            <div class="device-item">
+                <div class="device-icon">⌚</div>
+                <div class="device-info">
+                    <div class="device-name">Adi's Apple Watch</div>
+                    <div class="battery-info">
+                        <div class="battery-percentage">80%</div>
+                        <div class="battery-indicator">
+                            <div class="battery-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- AirPods Pro -->
+            <div class="device-item">
+                <div class="device-icon">🎧</div>
+                <div class="device-info">
+                    <div class="device-name">Adi's AirPods Pro</div>
+                    <div class="battery-info">
+                        <div class="battery-percentage">60%</div>
+                        <div class="battery-indicator">
+                            <div class="battery-level" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <!-- AirPods Case -->
+            <div class="device-item">
+                <div class="device-icon">🎧</div>
+                <div class="device-info">
+                    <div class="device-name">AirPods Case</div>
+                    <div class="battery-info">
+                        <div class="battery-percentage">25%</div>
+                        <div class="battery-indicator">
+                            <div class="battery-level" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 这里可以添加动态更新电池状态的JavaScript代码
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化代码
+        });
+    </script>
+</body>
+</html>
